@@ -5,8 +5,12 @@ const validator = require('validator');
 require('dotenv').config();
 
 const app = express();
+const allowedOrigins = [
+  'http://localhost:3000', // Local development
+  'https://main.d27q0guhp97k1i.amplifyapp.com', // Production
+];
 app.use(cors({
-  origin: 'https://main.d27q0guhp97k1i.amplifyapp.com',
+  origin: allowedOrigins,
   credentials: true,
 }));
 

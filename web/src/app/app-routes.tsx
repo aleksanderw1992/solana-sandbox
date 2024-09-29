@@ -12,10 +12,13 @@ const DashboardFeature = lazy(() => import('./dashboard/dashboard-feature'));
 const SolanaSandboxFeature = lazy(
   () => import('./solana-sandbox/solana-sandbox-feature')
 );
+const NewsletterFeature = lazy(() => import('./newsletter/newsletter-feature'));
+
 const links: { label: string; path: string }[] = [
   { label: 'Account', path: '/account' },
   { label: 'Clusters', path: '/clusters' },
   { label: 'SolanaSandbox Program', path: '/solana-sandbox' },
+  { label: 'Newsletter', path: '/newsletter' },
 ];
 
 const routes: RouteObject[] = [
@@ -23,6 +26,7 @@ const routes: RouteObject[] = [
   { path: '/account/:address', element: <AccountDetailFeature /> },
   { path: '/clusters', element: <ClusterFeature /> },
   { path: 'solana-sandbox/*', element: <SolanaSandboxFeature /> },
+  { path: '/newsletter', element: <NewsletterFeature /> },
 ];
 
 export function AppRoutes() {
