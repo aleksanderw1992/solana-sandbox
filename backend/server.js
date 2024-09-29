@@ -17,10 +17,10 @@ app.use(express.text({ type: 'text/plain' }));
 // Database connection configuration
 const pool = new Pool({
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
+  port: process.env.DB_PORT || 5432,
+  user: process.env.DB_USER || "postgres",
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  database: process.env.DB_NAME || "postgres",
   ssl: {
     rejectUnauthorized: false,
   },

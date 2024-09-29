@@ -11,3 +11,14 @@ Publicly accessible
 if you want to access database outside of Amazon EC2
 
 Note - for production use cases you either make it publicly available and restrict access to single IP or only user Amazon EC2 instances
+https://stackoverflow.com/questions/30790666/error-with-not-existing-instance-profile-while-trying-to-get-a-django-project-ru/76620598#76620598
+
+backend (GET/ POST)
+http://solana-last-try-env.eba-pne33s9j.eu-north-1.elasticbeanstalk.com/newsletter
+
+Used AWS services:
+- amplify for frontend deployment
+- IAM for role setup
+- Elastic Beanstalk for backend deployment
+- RDS for database setup
+
