@@ -45,3 +45,4 @@ anchor/target/.rustc_info.json
 test-ledger
 .yarn
 .vercel
+/backend/.env
