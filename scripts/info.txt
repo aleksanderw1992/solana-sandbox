@@ -15,10 +15,17 @@ https://stackoverflow.com/questions/30790666/error-with-not-existing-instance-pr
 
 backend (GET/ POST)
 http://solana-last-try-env.eba-pne33s9j.eu-north-1.elasticbeanstalk.com/newsletter
+https://solana-last-try-env.eba-pne33s9j.eu-north-1.elasticbeanstalk.com/newsletter
+frontend:
+https://main.d27q0guhp97k1i.amplifyapp.com/dashboard
 
 Used AWS services:
 - amplify for frontend deployment
 - IAM for role setup
 - Elastic Beanstalk for backend deployment
 - RDS for database setup
+
+https://stackoverflow.com/a/63837949
+Sadly you can't enable https directly for app-name.elasticbeanstalk.com domain. This is because this domain is controlled by AWS. You can only register SSL certificates for domains that you control.
+
 

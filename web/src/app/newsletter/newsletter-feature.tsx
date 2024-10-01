@@ -3,7 +3,7 @@ import { NewsletterForm } from './newsletter-ui';
 import toast, { Toaster } from 'react-hot-toast';
 
 const API_URL = process.env.REACT_APP_API_URL ||
-  "http://solana-last-try-env.eba-pne33s9j.eu-north-1.elasticbeanstalk.com/newsletter";
+  "https://solana-last-try-env.eba-pne33s9j.eu-north-1.elasticbeanstalk.com/newsletter";
 
 export default function NewsletterFeature() {
   const [email, setEmail] = useState('');
@@ -19,7 +19,7 @@ export default function NewsletterFeature() {
     }
 
     try {
-      // console.log(JSON.stringify({ email }));
+      console.log(JSON.stringify({ email }));
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
