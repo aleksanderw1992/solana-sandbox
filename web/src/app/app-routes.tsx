@@ -13,12 +13,14 @@ const SolanaSandboxFeature = lazy(
   () => import('./solana-sandbox/solana-sandbox-feature')
 );
 const NewsletterFeature = lazy(() => import('./newsletter/newsletter-feature'));
+const NftAdminFeature = lazy(() => import('./admin/nfts/nft-admin-feature'));
 
 const links: { label: string; path: string }[] = [
   { label: 'Account', path: '/account' },
   { label: 'Clusters', path: '/clusters' },
   { label: 'SolanaSandbox Program', path: '/solana-sandbox' },
   { label: 'Newsletter', path: '/newsletter' },
+  { label: 'NFT Admin', path: '/admin/nfts' },
 ];
 
 const routes: RouteObject[] = [
@@ -27,6 +29,7 @@ const routes: RouteObject[] = [
   { path: '/clusters', element: <ClusterFeature /> },
   { path: 'solana-sandbox/*', element: <SolanaSandboxFeature /> },
   { path: '/newsletter', element: <NewsletterFeature /> },
+  { path: '/admin/nfts', element: <NftAdminFeature /> },
 ];
 
 export function AppRoutes() {

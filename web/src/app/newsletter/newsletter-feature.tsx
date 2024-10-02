@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { NewsletterForm } from './newsletter-ui';
 import toast, { Toaster } from 'react-hot-toast';
 
-const API_URL = process.env.REACT_APP_API_URL ||
-  "https://solana-last-try-env.eba-pne33s9j.eu-north-1.elasticbeanstalk.com/newsletter";
+import API_URL from '../config/apiConfig';
 
+const API_ENDPOINT = `${API_URL}/newsletter`;
 export default function NewsletterFeature() {
   const [email, setEmail] = useState('');
 
@@ -20,7 +20,7 @@ export default function NewsletterFeature() {
 
     try {
       console.log(JSON.stringify({ email }));
-      const response = await fetch(API_URL, {
+      const response = await fetch(API_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
