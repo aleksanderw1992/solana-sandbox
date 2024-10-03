@@ -1,27 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html,
-body,
-#root {
-  height: 100%;
-}
-.wallet-adapter-button-trigger {
-  background: rgb(100, 26, 230) !important;
-  border-radius: 8px !important;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
-}
-.wallet-adapter-dropdown-list,
-.wallet-adapter-button {
-  font-family: inherit !important;
-}
 /* web/src/styles.css */
 
+/* Remove duplicated Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,4 +12,34 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   @apply font-semibold;
+}
+
+/* Global input styles */
+@layer base {
+  input,
+  textarea,
+  select {
+    @apply bg-white text-gray-800 border border-gray-300 rounded p-2;
+  }
+
+  input::placeholder,
+  textarea::placeholder,
+  select::placeholder {
+    @apply text-gray-500;
+  }
+
+  /* Optional: Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    input,
+    textarea,
+    select {
+      @apply bg-gray-800 text-white border-gray-600;
+    }
+
+    input::placeholder,
+    textarea::placeholder,
+    select::placeholder {
+      @apply text-gray-400;
+    }
+  }
 }
