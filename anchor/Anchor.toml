@@ -8,6 +8,9 @@ skip-lint = false
 [programs.localnet]
 solana_sandbox = "6yG5UEezgvxvXRr25nFQ5c2uKh3QbhhU7xLzXb61j4My"
 
+[programs.devnet]
+solana_sandbox = "6yG5UEezgvxvXRr25nFQ5c2uKh3QbhhU7xLzXb61j4My"
+
 [registry]
 url = "https://api.apr.dev"
 
