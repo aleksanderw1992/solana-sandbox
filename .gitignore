@@ -48,3 +48,5 @@ test-ledger
 /backend/.env
 /web/.env.development
 /web/.env.production
+/sugar/config.json
+/sugar/sugar.log

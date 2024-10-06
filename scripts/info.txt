@@ -28,4 +28,7 @@ Used AWS services:
 https://stackoverflow.com/a/63837949
 Sadly you can't enable https directly for app-name.elasticbeanstalk.com domain. This is because this domain is controlled by AWS. You can only register SSL certificates for domains that you control.
 
+https://ipfs.io/ipfs/Qmcmxos2g5zgxsf7DjftH15gN7ULSTNjNACheLqEf5HDgS?filename=gigawrap_nft.png
+https://www.solana.fm/address/9ugN5M8SRHoMhjDoZE9ugZMFfwCuQmC23cHKtZQTLp3Z?cluster=devnet-alpha
 
+https://github.com/CalebEverett/metaplex-cli

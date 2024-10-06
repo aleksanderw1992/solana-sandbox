@@ -1,0 +1,18 @@
+{
+  "name": "GigawrapNft",
+  "description": "GigawrapNft Collection",
+  "image": "https://ipfs.io/ipfs/Qmcmxos2g5zgxsf7DjftH15gN7ULSTNjNACheLqEf5HDgS?filename=gigawrap_nft.png",
+  "external_url": "https://ipfs.io/ipfs/Qmcmxos2g5zgxsf7DjftH15gN7ULSTNjNACheLqEf5HDgS?filename=gigawrap_nft.png",
+  "attributes": [
+
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://ipfs.io/ipfs/Qmcmxos2g5zgxsf7DjftH15gN7ULSTNjNACheLqEf5HDgS?filename=gigawrap_nft.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}
