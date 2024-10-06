@@ -18,13 +18,13 @@ const TermsPage = lazy(() => import('./user/terms'));
 const NftMintFeature = lazy(() => import('./solana-sandbox/solana-sandbox-nft'));
 
 const links = [
-  { label: 'Account', path: '/account' },
-  { label: 'Clusters', path: '/clusters' },
-  { label: 'SolanaSandbox Program', path: '/solana-sandbox' },
+  // { label: 'Account', path: '/account' },
+  // { label: 'Clusters', path: '/clusters' },
+  // { label: 'SolanaSandbox Program', path: '/solana-sandbox' },
+  { label: 'USER', path: '/user/first-step' },
   { label: 'NFT Mint Admin', path: '/admin/nft-mint' },
   { label: 'NFT Admin', path: '/admin/nfts' },
   { label: 'Newsletter Admin', path: '/admin/newsletter' },
-  { label: 'First Step', path: '/user/first-step' },
   { label: 'Final Design', path: 'https://www.figma.com/proto/CMbGqUe5Vsgaz0TYuWo6ls/Rabbit-vision?page-id=1%3A4&node-id=1-6&node-type=frame&viewport=360%2C315%2C0.09&t=sKoQv0PnFQV3NzEf-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A6' }
 ];
 
