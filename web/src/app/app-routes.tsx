@@ -15,11 +15,13 @@ const SecondStepFeature = lazy(() => import('./user/second-step-feature'));
 const ThirdStepFeature = lazy(() => import('./user/third-step-feature'));
 const GDPRPage = lazy(() => import('./user/gdpr'));
 const TermsPage = lazy(() => import('./user/terms'));
+const NftMintFeature = lazy(() => import('./solana-sandbox/solana-sandbox-nft'));
 
 const links = [
   { label: 'Account', path: '/account' },
   { label: 'Clusters', path: '/clusters' },
   { label: 'SolanaSandbox Program', path: '/solana-sandbox' },
+  { label: 'NFT Mint Admin', path: '/admin/nft-mint' },
   { label: 'NFT Admin', path: '/admin/nfts' },
   { label: 'Newsletter Admin', path: '/admin/newsletter' },
   { label: 'First Step', path: '/user/first-step' },
@@ -32,6 +34,7 @@ const routes: RouteObject[] = [
   { path: '/clusters', element: <ClusterFeature /> },
   { path: 'solana-sandbox/*', element: <SolanaSandboxFeature /> },
   { path: '/newsletter', element: <NewsletterFeature /> },
+  { path: '/admin/nft-mint', element: <NftMintFeature /> },
   { path: '/admin/nfts', element: <NftAdminFeature /> },
   { path: '/admin/newsletter', element: <NewsletterAdminFeature /> },
   { path: '/user/first-step', element: <FirstStepFeature /> },
