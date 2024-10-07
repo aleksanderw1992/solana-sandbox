@@ -6,14 +6,14 @@ interface NftAddFormProps {
 
 export const NftAddForm: React.FC<NftAddFormProps> = ({ onAdd }) => {
   const [nft, setNft] = useState('');
-  const [discount, setDiscount] = useState('silver');
+  const [discount, setDiscount] = useState('Rhod');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (nft.trim()) {
       onAdd(nft.trim(), discount);
       setNft('');
-      setDiscount('silver');
+      setDiscount('Rhod');
     }
   };
 
@@ -41,9 +41,9 @@ export const NftAddForm: React.FC<NftAddFormProps> = ({ onAdd }) => {
           onChange={(e) => setDiscount(e.target.value)}
           className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         >
-          <option value="silver">Silver</option>
-          <option value="gold">Gold</option>
-          <option value="pallad">Pallad</option>
+          <option value="Rhod">Rhod</option>
+          <option value="Platinum">Platinum</option>
+          <option value="Palladium">Palladium</option>
         </select>
       </div>
       <div className="text-center">

@@ -90,7 +90,7 @@ app.post('/nft-discounts', async (req, res) => {
     return res.status(400).json({ error: 'Invalid NFT identifier' });
   }
 
-  const validDiscounts = ['silver', 'gold', 'pallad'];
+  const validDiscounts = ['Rhod', 'Platinum', 'Palladium'];
   if (!discount || !validDiscounts.includes(discount)) {
     return res.status(400).json({ error: 'Invalid discount level' });
   }
