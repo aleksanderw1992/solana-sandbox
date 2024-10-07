@@ -9,21 +9,20 @@ const API_ENDPOINT = `${API_URL}/nft-discounts`;
 
 export interface NftDiscount {
   id: number;
-  nft: string; // NFT identifier (e.g., mint address)
-  discount: string; // Discount level
+  nft: string;
+  discount: string;
 }
 
 const ThirdStepFeature: React.FC = () => {
   const { connection } = useConnection();
   const wallet = useWallet();
-  const [nfts, setNfts] = useState<any[]>([]); // NFTs owned by the user
-  const [nftDiscounts, setNftDiscounts] = useState<NftDiscount[]>([]); // NFT discounts from the API
-  const [bonuses, setBonuses] = useState<NftDiscount[]>([]); // Matched NFTs with discounts
+  const [nfts, setNfts] = useState<any[]>([]);
+  const [nftDiscounts, setNftDiscounts] = useState<NftDiscount[]>([]);
+  const [matchedBonus, setMatchedBonus] = useState<{ nftId: string; discount: string } | null>(null);
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Step 1: Fetch NFT discounts from the API
   const fetchNftDiscounts = async () => {
     try {
       const response = await fetch(`${API_ENDPOINT}`);
@@ -38,10 +37,9 @@ const ThirdStepFeature: React.FC = () => {
     }
   };
 
-  // Step 2: Fetch user NFTs from their connected wallet
   const checkNfts = async () => {
     if (!wallet.publicKey) {
-      setMessage('Please connect your wallet to claim your discount.');
+      setMessage('Please connect your wallet to check your discount level.');
       return;
     }
 
@@ -54,16 +52,13 @@ const ThirdStepFeature: React.FC = () => {
       const allNFTs = await fetchAllDigitalAssetWithTokenByOwner(umi, ownerPublicKey);
       setNfts(allNFTs);
 
-      // Step 3: Compare NFTs with the discounts from the API
-      const matchedNFTs = allNFTs
-        .filter(nft => nftDiscounts.some(dbNFT => dbNFT.nft === nft.publicKey.toString()))
-        .map(nft => nftDiscounts.find(dbNFT => dbNFT.nft === nft.publicKey.toString()));
-
-      if (matchedNFTs.length > 0) {
-        setBonuses(matchedNFTs as NftDiscount[]); // Save the matched NFTs with their discounts
+      const matched = allNFTs.find(nft => nftDiscounts.some(dbNFT => dbNFT.nft === nft.publicKey.toString()));
+      if (matched) {
+        const discount = nftDiscounts.find(dbNFT => dbNFT.nft === matched.publicKey.toString())?.discount || '';
+        setMatchedBonus({ nftId: matched.publicKey.toString(), discount });
         setMessage('');
       } else {
-        setMessage('Currently, you do not have an NFT required to claim a bonus. Contact biuro@megaoklejanie.pl.');
+        setMessage('Currently you do not have a NFT required to claim bonus. Contact biuro@megaoklejanie.pl');
       }
     } catch (error) {
       console.error('Error fetching NFTs:', error);
@@ -82,41 +77,52 @@ const ThirdStepFeature: React.FC = () => {
   };
 
   useEffect(() => {
-    // Fetch discounts when the component loads
     fetchNftDiscounts();
   }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-xl mx-auto bg-white shadow-md rounded-md p-8">
-        <h1 className="text-2xl font-bold mb-6 text-center">Claim Your Discount</h1>
+      <div className="flex justify-center mb-6">
+        <div className="w-4/5 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+          <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '100%' }}></div>
+        </div>
+      </div>
 
-        <p className="text-center mb-4">
-          You can claim your discount with your NFT.
-        </p>
-
+      <div className="max-w-3xl mx-auto bg-white shadow-md rounded-md p-8">
+        <h1 className="text-2xl font-bold mb-2 text-center">Almost there!</h1>
+        <h2 className="text-xl font-semibold mb-4 text-center">
+          Now connect your wallet if you haven't already and check your discount level!
+        </h2>
         <button
-          className="btn btn-primary mb-4"
           onClick={handleClaimDiscount}
           disabled={loading || wallet.connecting}
+          className={`bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-full ${!wallet.connected && 'opacity-50 cursor-not-allowed'}`}
         >
           {loading ? 'Checking...' : 'Claim your discount'}
         </button>
 
-        {message && <p className="text-center text-red-500">{message}</p>}
-        {error && <p className="text-center text-red-500">Error: {error}</p>}
+        {message && (
+          <p className="text-center text-red-500 mt-4">
+            {message}
+          </p>
+        )}
 
-        {bonuses.length > 0 && (
-          <div className="mt-4">
-            <h3 className="text-lg font-bold mb-4">Available Discounts:</h3>
-            <ul>
-              {bonuses.map((bonus, index) => (
-                <li key={index}>
-                  NFT ID: {bonus.nft} - Discount Level: {bonus.discount}
-                </li>
-              ))}
-            </ul>
+        {matchedBonus && (
+          <div className="mt-6 p-4 bg-green-100 rounded">
+            <h2 className="text-xl font-bold mb-2 text-center">Congratulations!</h2>
+            <p className="text-center">
+              You have NFT with ID: <span className="font-mono">{matchedBonus.nftId}</span>
+            </p>
+            <p className="text-center">
+              And fortunately, it allows you a <span className="font-bold">{matchedBonus.discount}</span> discount level!
+            </p>
           </div>
+        )}
+
+        {error && (
+          <p className="text-center text-red-500 mt-4">
+            Error: {error}
+          </p>
         )}
       </div>
     </div>

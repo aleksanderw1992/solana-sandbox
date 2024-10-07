@@ -11,8 +11,17 @@ const SecondStepFeature: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
+      <div className="flex justify-center mb-6">
+        <div className="w-3/4 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+          <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '66%' }}></div>
+        </div>
+      </div>
+
       <div className="max-w-xl mx-auto bg-white shadow-md rounded-md p-8">
-        <h1 className="text-2xl font-bold mb-6 text-center">Second Step: Confirm</h1>
+        <h1 className="text-2xl font-bold mb-2 text-center">Almost There!</h1>
+        <p className="text-center mb-4">
+          Almost there... Please confirm your agreements to proceed.
+        </p>
 
         <div className="mb-4">
           <label className="block">
@@ -23,7 +32,7 @@ const SecondStepFeature: React.FC = () => {
             />
             {' '}
             I agree to the
-            <a href="/gdpr" target="_blank" className="text-blue-500 underline">GDPR Policy</a>
+            <a href="/gdpr" target="_blank" className="text-blue-500 underline"> GDPR Policy</a>
           </label>
         </div>
 
@@ -36,7 +45,7 @@ const SecondStepFeature: React.FC = () => {
             />
             {' '}
             I agree to the
-            <a href="/terms" target="_blank" className="text-blue-500 underline">Terms of Conduct</a>
+            <a href="/terms" target="_blank" className="text-blue-500 underline"> Terms of Conduct</a>
           </label>
         </div>
 
@@ -55,9 +64,7 @@ const SecondStepFeature: React.FC = () => {
         <button
           onClick={() => navigate('/user/third-step')}
           disabled={!allChecked}
-          className={`${
-            allChecked ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-300 cursor-not-allowed'
-          } text-white p-2 mt-4 rounded`}
+          className={`bg-blue-500 text-white p-2 mt-4 rounded hover:bg-blue-600 w-full ${!allChecked ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
           Next
         </button>

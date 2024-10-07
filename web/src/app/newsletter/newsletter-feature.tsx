@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { NewsletterForm } from './newsletter-ui';
 import toast, { Toaster } from 'react-hot-toast';
-
 import API_URL from '../config/apiConfig';
 
 const API_ENDPOINT = `${API_URL}/newsletter`;
+
 export default function NewsletterFeature() {
   const [email, setEmail] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Email validation on the client-side
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       toast.error('Invalid email address');
@@ -19,7 +18,6 @@ export default function NewsletterFeature() {
     }
 
     try {
-      console.log(JSON.stringify({ email }));
       const response = await fetch(API_ENDPOINT, {
         method: 'POST',
         headers: {
