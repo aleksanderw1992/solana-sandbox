@@ -1,96 +1,54 @@
-# solana-sandbox
+# NFT Discount Service
 
-This project is generated with the [create-solana-dapp](https://github.com/solana-developers/create-solana-dapp) generator.
+Welcome to **NFT Discount Service**! This project is a web application using the Solana blockchain, designed to provide users with an intuitive and seamless experience for managing NFTs and claiming discounts based on their NFT holdings.
+
+## Project Overview
+
+NFT Discount Service allows users to:
+
+1. **Acquire NFTs**: Obtain NFTs either through airdrops or by purchasing them on NFT marketplaces.
+2. **Sign Up for Newsletter**: Register for our newsletter to stay updated with the latest news and promotions.
+3. **Consent to Policies**: Accept necessary consents such as GDPR and Terms of Conduct.
+4. **Connect Wallet**: Link your Solana wallet to verify ownership of eligible NFTs.
+5. **Claim Discounts**: Automatically receive discount levels based on the NFTs you hold.
+
+The application guides users through a three-step process to ensure a smooth and secure interaction with the Solana blockchain and our services.
+
+## Technologies Used
+
+- **Frontend:**
+  - **React**: A JavaScript library for building user interfaces.
+  - **Tailwind CSS**: A utility-first CSS framework for styling.
+  - **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+  - **@solana/wallet-adapter-react**: React hooks for Solana wallet integration.
+  - **@metaplex-foundation/umi**: Tools for interacting with Metaplex and Solana programs.
+  - **React Hot Toast**: For elegant toast notifications.
+
+- **Backend:**
+  - **Express.js**: A minimal and flexible Node.js web application framework.
+  - **Node.js**: JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+- **Blockchain:**
+  - **Solana**: A high-performance blockchain supporting builders around the world creating crypto apps.
+
+- **Hosting:**
+  - **AWS Amplify**: A set of tools and services for building secure, scalable mobile and web applications.
+  - **AWS Elastic Beanstalk**: An easy-to-use service for deploying and scaling web applications and services.
+
+## Live Demo
+
+Experience NFT Discount Service live at: [https://main.d27q0guhp97k1i.amplifyapp.com/](https://main.d27q0guhp97k1i.amplifyapp.com/)
 
 ## Getting Started
 
-### Prerequisites
+For detailed technical instructions on setting up and running the project locally, please refer to the [Technical README](README_technical.md).
 
-- Node v18.18.0 or higher
+## License
 
-- Rust v1.77.2 or higher
-- Anchor CLI 0.30.1 or higher
-- Solana CLI 1.18.17 or higher
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### Installation
+## Contact
 
-#### Clone the repo
+For any questions or support, please contact us at [biuro@megaoklejanie.pl](mailto:biuro@megaoklejanie.pl).
 
-```shell
-git clone <repo-url>
-cd <repo-name>
-```
-
-#### Install Dependencies
-
-```shell
-npm install
-```
-
-#### Start the web app
-
-```
-npm run dev
-```
-
-## Apps
-
-### anchor
-
-This is a Solana program written in Rust using the Anchor framework.
-
-#### Commands
-
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the command with `npm run`, eg: `npm run anchor`.
-
-#### Sync the program id:
-
-Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
-
-You will manually need to update the constant in `anchor/lib/counter-exports.ts` to match the new program id.
-
-```shell
-npm run anchor keys sync
-```
-
-#### Build the program:
-
-```shell
-npm run anchor-build
-```
-
-#### Start the test validator with the program deployed:
-
-```shell
-npm run anchor-localnet
-```
-
-#### Run the tests
-
-```shell
-npm run anchor-test
-```
-
-#### Deploy to Devnet
-
-```shell
-npm run anchor deploy --provider.cluster devnet
-```
-
-### web
-
-This is a React app that uses the Anchor generated client to interact with the Solana program.
-
-#### Commands
-
-Start the web app
-
-```shell
-npm run dev
-```
-
-Build the web app
-
-```shell
-npm run build
-```
+---

@@ -48,10 +48,10 @@ export function AppRoutes() {
   return (
     <UiLayout links={links}>
       {useRoutes([
-        { index: true, element: <Navigate to={'/dashboard'} replace={true} /> },
+        { index: true, element: <Navigate to={'/user/first-step'} replace={true} /> },
         { path: '/dashboard', element: <DashboardFeature /> },
         ...routes,
-        { path: '*', element: <Navigate to={'/dashboard'} replace={true} /> },
+        { path: '*', element: <Navigate to={'/user/first-step'} replace={true} /> },
       ])}
     </UiLayout>
   );
