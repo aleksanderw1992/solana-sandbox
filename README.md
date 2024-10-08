@@ -2,6 +2,12 @@
 
 Welcome to **NFT Discount Service**! This project is a web application using the Solana blockchain, designed to provide users with an intuitive and seamless experience for managing NFTs and claiming discounts based on their NFT holdings.
 
+## Project Documentation
+
+For additional documentation ( Colloseum Radar Hackathon submittion) please visit:
+
+https://drive.google.com/drive/folders/1VLcfTo8t-dZGkV0a-wN-9bU3UYPTcq7z
+
 ## Project Overview
 
 NFT Discount Service allows users to:
