@@ -43,6 +43,7 @@ The application guides users through a three-step process to ensure a smooth and
 
 ## Live Demo
 
+(removed for cost of AWS server)
 Experience NFT Discount Service live at: [https://main.d27q0guhp97k1i.amplifyapp.com/](https://main.d27q0guhp97k1i.amplifyapp.com/)
 
 ## Getting Started
